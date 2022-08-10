@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WILL</title>
+<body style="background:black">
+
+<style>
+#miCanvas{  border:dotted 4px red;
+                background:black;
+				background-image: url(https://image.posterlounge.es/images/m/1886502.jpg)
+}
+</style>
+<script>
+window.onload = function(){
+    var canvas = document.getElementById("miCanvas");
+    if(canvas && canvas.getContext){
+        var ctx = canvas.getContext("2d");
+        if(ctx){
+            //Descripcion de lineas
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = "red";
+            //Dibujamos esquina
+            ctx.beginPath();
+            ctx.lineJoin = "round";
+            ctx.lineJoin = "bevel";
+            ctx.lineJoin = "mitter";
+            ctx.moveTo(25,40);
+			//izquierda arriba
+            ctx.lineTo(92,144);
+			// derecha abajo
+			//W
+			ctx.lineCap = "round";
+			ctx.moveTo(118,95);
+            ctx.lineTo(92,144);
+			ctx.moveTo(118,95);
+            ctx.lineTo(150,150);
+			ctx.moveTo(200,40);
+			// izquierda arriba
+            ctx.lineTo(150,150);
+			// derecha abajo
+            ctx.stroke();
+			
+			//i
+			
+			ctx.beginPath();
+            ctx.moveTo(200,95);
+			// izquierda arriba
+            ctx.lineTo(200,150);
+			// derecha abajo
+            ctx.stroke();
+			
+			//punto i
+			ctx.beginPath();
+            ctx.moveTo(200,75);
+			// izquierda arriba
+            ctx.lineTo(200,80);
+			// derecha abajo
+            ctx.stroke();
+			
+				//L
+			
+			ctx.beginPath();
+            ctx.moveTo(250,50);
+			// izquierda arriba
+            ctx.lineTo(250,150);
+			ctx.moveTo(270,150);
+			ctx.lineTo(250,150);
+			// derecha abajo
+            ctx.stroke();
+			
+			
+			
+			
+			//S
+			ctx.beginPath();
+            //Primer punto
+            ctx.moveTo(340,50);
+            //Dibujamos la curva
+            ctx.bezierCurveTo(250,120, 340,80, 300,170);
+            //Dibujamos la curva
+            ctx.stroke();
+            
+			
+			//O 
+			ctx.beginPath();
+            ctx.arc(380,120,30, 0, 2*Math.PI,true);
+            ctx.stroke();
+			
+			//N 
+			
+			
+			ctx.beginPath();
+			ctx.moveTo(420,80);
+			// izquierda arriba
+            ctx.lineTo(440,150);
+			// derecha abajo
+			ctx.moveTo(420,80);
+			// izquierda arriba
+            ctx.lineTo(470,150);
+			// derecha abajo
+			 ctx.moveTo(460,80);
+			 // izquierda arriba
+            ctx.lineTo(470,145);
+			// derecha abajo
+			ctx.stroke();
+			
+			
+			
+      
+            var imagen = new Image();
+            //
+            function procesaImagen(){
+                ctx.drawImage(imagen,510,140,193,272);         
+            }
+            //
+            imagen.src = "imagenes/will.png";
+            imagen.onload = function(e){
+                procesaImagen();
+            }
+		
+			
+			
+			
+			
+        } else {
+            alert("Error al crear tu contexto");    
+        }
+    }
+}
+</script>
+</head>
+<body>
+<h1><FONT COLOR="red">WILLSONGOLPEADOR</h1>
+<canvas id="miCanvas" width="700px" height="400px">
+Tu navegador no soporta CANVAS
+</canvas>
+</body>
+</html>
